@@ -14,3 +14,4 @@ npm install firebase-functions
 
 npm install firebase-admin
 
+firebase deploy --only functions
