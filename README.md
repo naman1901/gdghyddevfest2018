@@ -100,6 +100,9 @@ add debug point
  
  
  functions reset helloWorld --keep
+ 
+ 
+ 
 
 
 gcloud functions list
@@ -109,6 +112,8 @@ npm install --save @google-cloud/debug-agent
 
 require('@google-cloud/debug-agent').start();
 
+
+ gcloud functions deploy helloWorld --runtime nodejs6 --trigger-http --entry-point helloWorld --project gdgdevfest2018-218215
 
 
 
