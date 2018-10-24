@@ -30,7 +30,7 @@ Create and edit your function file.
 
 Add a simple function 
 
-```
+``` javascript 
 exports.helloWorld = (req, res) => {
 	res.send('Hello World!');
 };
@@ -66,7 +66,7 @@ functions inspect  helloWorld
 ```
 Connect VS Code to debugger 
 Add run configuration 
-```
+``` javascript 
 
    "configurations": [
     {
@@ -118,6 +118,48 @@ Redeploy in cloud
 Head over to stackdriver debugger and add source. Click on a line of code to get a snapshot 
 
 Add log points 
+
+## Tests
+
+Install Dependencies
+```
+npm install --global ava
+ava --init
+npm install  @google-cloud/debug-agent --save-dev
+npm install  sinon --save-dev
+
+```
+See the changes in package.json and Run the tests 
+```
+ava test/index.test.js
+```
+Or
+```
+npm test
+```
+
+``` javascript 
+const test = require(`ava`);
+const sinon = require(`sinon`);
+
+const helloWorld = require(`..`).helloWorld;
+
+test(`helloHttp: should print hello world`, t => {
+  // Mock ExpressJS 'req' and 'res' parameters
+  const req = {
+    body: {}
+  };
+  const res = { send: sinon.stub() };
+
+  // Call tested function
+  helloWorld(req, res);
+
+  // Verify behavior of tested function
+  t.true(res.send.calledOnce);
+  t.deepEqual(res.send.firstCall.args, [`Hello World!`]);
+});
+```
+
 
 
 

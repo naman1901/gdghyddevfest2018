@@ -4,11 +4,16 @@
   "description": "Demo function for GDG Devfest 2018 Hyderabad",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@google-cloud/debug-agent": "^3.0.0"
+  },
+  "devDependencies": {
+    "@google-cloud/debug-agent": "^3.0.0",
+    "ava": "^0.25.0",
+    "sinon": "^7.0.0"
   }
 }
