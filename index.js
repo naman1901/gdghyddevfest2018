@@ -6,7 +6,7 @@ exports.helloWorld = (req, res) => {
   const lang = req.query.lang || 'en-US';
   const gender = req.query.gender || 'NEUTRAL';
   const textToSpeech = require('@google-cloud/text-to-speech');
-
+  console.log('Request received %j', req);
   // Creates a client
   const client = new textToSpeech.TextToSpeechClient();
 
