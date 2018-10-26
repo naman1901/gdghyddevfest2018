@@ -48,7 +48,9 @@ functions start
 functions deploy helloWorld --trigger-http
  
 curl http://localhost:8010/gdgdevfesthyd2018/us-central1/helloWorld
- 
+
+functions logs read
+
 ```
 
 Deploy and run in cloud 
@@ -58,7 +60,10 @@ gcloud functions deploy helloWorld --runtime nodejs6 --trigger-http
 
 curl https://us-central1-jdalabs-retail-me-dev01.cloudfunctions.net/helloWorld
 
+gcloud functions read logs
+
 ```
+
 
 Debug in emulator 
 ```
@@ -159,7 +164,6 @@ test(`helloHttp: should print hello world`, t => {
   t.deepEqual(res.send.firstCall.args, [`Hello World!`]);
 });
 ```
-
 
 
 

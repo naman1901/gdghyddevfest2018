@@ -27,6 +27,6 @@ exports.helloWorld = (req, res) => {
     }
     res.set('Content-Type', 'Content-Type: audio/mpeg');
     res.set('Content-Disposition', 'attachment; filename="output.mp3');
-    res.send(new Buffer(response.audioContent, 'binary'))
+    res.send(new Buffer(response.audioContent, 'binary'));
   });
 };
