@@ -165,6 +165,8 @@ test(`helloHttp: should print hello world`, t => {
 });
 ```
 
+## Speech API integration 
 
+[TTS-Integration](docs/TTS-Integration.md)
 
 
