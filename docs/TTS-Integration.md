@@ -1,10 +1,11 @@
 Text to speech integration 
 
+Install dependency 
 ```
 npm install  @google-cloud/text-to-speech --save
-curl https://us-central1-gdgdevfest2018-218215.cloudfunctions.net/helloWorld?text=hi&lang=en-GB --output output.mp3
-
 ```
+
+Send TTS Request
 
 ```javascript
 // Imports the Google Cloud client library
@@ -38,4 +39,9 @@ client.synthesizeSpeech(request, (err, response) => {
     res.send(new Buffer(response.audioContent, 'binary'));
 });
 
+```
+
+Generate speech
+```
+curl https://us-central1-gdgdevfest2018-218215.cloudfunctions.net/helloWorld?text=hi&lang=en-GB --output output.mp3
 ```
