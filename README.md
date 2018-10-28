@@ -97,7 +97,7 @@ Add debug point
 ```
 functions call helloWorld
 ``` 
-Get out of debug mode but keep the sebug settings 
+Get out of debug mode but keep the debug settings 
 ```
 functions reset helloWorld --keep
  ```
